@@ -5,6 +5,7 @@
 .app {
     width: 100vw;
     height: 100vh;
+    background: cornflowerblue;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,9 +24,14 @@
     justify-content: center;
     align-items: center;
 }
+.cell img {
+    width: 48px;
+    height: 48px;
+    position: relative;
+}
 .black {
-    background: white;
+    background: #a1a1a1;
 }
 .white {
-    background: black;
+    background: #232323;
 }

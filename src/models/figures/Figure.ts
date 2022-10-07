@@ -6,10 +6,10 @@ export enum FigureName {
     FIGURE = 'Фигура',
     KING = 'Король',
     KNIGHT = 'Конь',
-    PAW = 'Пешка',
+    PAWN = 'Пешка',
     QUEEN = 'Королева',
     ROOK = 'Ладья',
-    BISHOPS = 'Слон',
+    BISHOP = 'Слон',
 }
 
 export class Figure {
