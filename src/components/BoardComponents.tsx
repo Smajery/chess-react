@@ -12,6 +12,10 @@ const BoardComponents: FC<BoardProps> = ({board, setBoard}) => {
     const [selectedCell, setSelectedCell] = useState<Cell | null>(null)
 
     function selectCell(cell: Cell) {
+        if (selectedCell && selectedCell !== cell && selectedCell.figure?.canMove(cell)) {
+            setSelectedCell(cell)
+            setSelectedCell(null)
+        }
         if (cell.figure) {
             setSelectedCell(cell)
         }
