@@ -1,6 +1,7 @@
 import {Colors} from "../Colors";
 import logo from '../../assets/black-bishop.png'
 import {Cell} from "../Cell";
+import {Board} from "../Board";
 
 export enum FigureName {
     FIGURE = 'Фигура',
@@ -32,5 +33,6 @@ export class Figure {
     canMove(target: Cell) : boolean {
         return true
     }
-    moveFigure(target: Cell) {}
+    moveFigure(target: Cell) {
+    }
 }

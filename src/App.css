@@ -35,3 +35,12 @@
 .white {
     background: #232323;
 }
+.selected {
+    background: indianred;
+}
+.available {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #22c022;
+}
