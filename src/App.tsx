@@ -5,6 +5,7 @@ import BoardComponents from "./components/BoardComponents";
 import {Player} from "./models/Player";
 import {Colors} from "./models/Colors";
 import LostFigures from "./components/LostFigures";
+import Timer from "./components/Timer";
 
 
 const App = () => {
@@ -15,13 +16,13 @@ const App = () => {
 
     useEffect(() => {
         restartGame()
-        setCurrentPlayer(whitePlayer)
     }, [])
 
     function restartGame () {
         const newBoard = new Board()
         newBoard.initCells()
         newBoard.addFigures()
+        setCurrentPlayer(whitePlayer)
         setBoard(newBoard)
     }
     function swapPlayer() {
@@ -41,6 +42,10 @@ const App = () => {
             />
             <LostFigures
                 figures={board.lostWhiteFigures}
+            />
+            <Timer
+                currentPlayer={currentPlayer}
+                restart={restartGame}
             />
         </div>
     );

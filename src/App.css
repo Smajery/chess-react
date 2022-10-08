@@ -1,6 +1,8 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: "Comic Sans MS";
+    font-weight: lighter;
 }
 .app {
     width: 100vw;
@@ -61,4 +63,17 @@
     flex-wrap: wrap;
     justify-content: center;
     background-color: transparent;
+}
+.timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+}
+.timerRestart {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16pt;
 }
