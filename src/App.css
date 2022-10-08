@@ -10,12 +10,23 @@
     justify-content: center;
     align-items: center;
 }
+.board-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
 .board {
     width: calc(64px * 8);
     height: calc(64px * 8);
     display: flex;
     flex-wrap: wrap;
     border: 20px solid #864f28;
+}
+.textBoxCurrentPlayer{
+    margin-right: auto;
+    padding: 5px;
 }
 .cell {
     width: 64px;
@@ -43,4 +54,11 @@
     height: 12px;
     border-radius: 50%;
     background-color: #22c022;
+}
+.lostFigures {
+    width: calc(30px * 3);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: transparent;
 }

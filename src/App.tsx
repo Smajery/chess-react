@@ -4,6 +4,7 @@ import {Board} from "./models/Board";
 import BoardComponents from "./components/BoardComponents";
 import {Player} from "./models/Player";
 import {Colors} from "./models/Colors";
+import LostFigures from "./components/LostFigures";
 
 
 const App = () => {
@@ -29,11 +30,17 @@ const App = () => {
 
     return (
         <div className='app'>
+            <LostFigures
+                figures={board.lostBlackFigures}
+            />
             <BoardComponents
                 board={board}
                 setBoard={setBoard}
                 currentPlayer={currentPlayer}
                 swapPlayer={swapPlayer}
+            />
+            <LostFigures
+                figures={board.lostWhiteFigures}
             />
         </div>
     );

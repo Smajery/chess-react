@@ -3,6 +3,7 @@ import {Board} from "../models/Board";
 import CellComponent from "./CellComponent";
 import {Cell} from "../models/Cell";
 import {Player} from "../models/Player";
+import {Colors} from "../models/Colors";
 
 interface BoardProps {
     board: Board;
@@ -43,19 +44,32 @@ const BoardComponents: FC<BoardProps> = ({board, setBoard, swapPlayer, currentPl
     }
 
     return (
-        <div className='board'>
-            {board.cells.map((row, index) =>
-                <React.Fragment key={index}>
-                    {row.map(cell =>
-                        <CellComponent
-                            selectCell={selectCell}
-                            key={cell.id}
-                            cell={cell}
-                            selected={cell.x === selectedCell?.x && cell.y === selectedCell?.y}
-                        />
-                    )}
-                </React.Fragment>
-            )}
+        <div className='board-wrap'>
+            <div className='textBoxCurrentPlayer'>
+                <h2>Ходит:
+                    <span
+                        style={{
+                            color: currentPlayer?.color === Colors.WHITE ? 'white' : 'black',
+                            marginLeft: 5
+                    }}>
+                        {currentPlayer?.color === Colors.WHITE ? 'Белый' : 'Черный'}
+                    </span>
+                </h2>
+            </div>
+            <div className='board'>
+                {board.cells.map((row, index) =>
+                    <React.Fragment key={index}>
+                        {row.map(cell =>
+                            <CellComponent
+                                selectCell={selectCell}
+                                key={cell.id}
+                                cell={cell}
+                                selected={cell.x === selectedCell?.x && cell.y === selectedCell?.y}
+                            />
+                        )}
+                    </React.Fragment>
+                )}
+            </div>
         </div>
     );
 };
