@@ -1,1 +1,1 @@
-Unfinished app
+Chess devoloped by React and Typescript
