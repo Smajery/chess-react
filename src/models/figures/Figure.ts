@@ -1,7 +1,6 @@
 import {Colors} from "../Colors";
 import logo from '../../assets/black-bishop.png'
 import {Cell} from "../Cell";
-import {Board} from "../Board";
 
 export enum FigureName {
     FIGURE = 'Фигура',
@@ -30,13 +29,14 @@ export class Figure {
         this.id = Math.random();
     }
 
-    canMove(target: Cell) : boolean {
-        if(target.figure?.color === this.color)
+    canMove(target: Cell): boolean {
+        if (target.figure?.color === this.color)
             return false
-        if(target.figure?.name === FigureName.KING)
+        if (target.figure?.name === FigureName.KING)
             return false
         return true
     }
+
     moveFigure(target: Cell) {
     }
 }
