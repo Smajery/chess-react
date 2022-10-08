@@ -62,11 +62,11 @@ export class Cell {
         if (absY !== absX) {
             return false
         }
-        const diagX = this.x < target.x ? 1 : -1
-        const diagY = this.y < target.y ? 1 : -1
+        const dX = this.x < target.x ? 1 : -1
+        const dY = this.y < target.y ? 1 : -1
         // Запрещает двигаться через фигуру, стоящую на пути наискосок
         for (let i = 1; i < absY; i++) {
-            if (!this.board.getCell(this.x + diagX * i, this.y + diagY * i).isEmpty())
+            if (!this.board.getCell(this.x + dX * i, this.y + dY * i).isEmpty())
                 return false
         }
         return true
