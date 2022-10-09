@@ -13,20 +13,26 @@ const App = () => {
     const [whitePlayer, setWhitePlayer] = useState(new Player(Colors.WHITE))
     const [blackPlayer, setBlackPlayer] = useState(new Player(Colors.BLACK))
     const [currentPlayer, setCurrentPlayer] = useState<Player | null>(null)
+    const [isStart, setIsStart] = useState<boolean>(false)
 
     useEffect(() => {
         restartGame()
     }, [])
 
     function restartGame () {
+        setCurrentPlayer(null)
         const newBoard = new Board()
         newBoard.initCells()
         newBoard.addFigures()
-        setCurrentPlayer(whitePlayer)
         setBoard(newBoard)
     }
     function swapPlayer() {
-        setCurrentPlayer(currentPlayer?.color === Colors.WHITE ? blackPlayer : whitePlayer)
+        if(currentPlayer?.color === Colors.WHITE){
+            setCurrentPlayer(blackPlayer)
+        }
+        if(currentPlayer?.color === Colors.BLACK){
+            setCurrentPlayer(whitePlayer)
+        }
     }
 
     return (
@@ -45,7 +51,11 @@ const App = () => {
             />
             <Timer
                 currentPlayer={currentPlayer}
+                setCurrentPlayer={setCurrentPlayer}
                 restart={restartGame}
+                whitePlayer={whitePlayer}
+                isStart={isStart}
+                setIsStart={setIsStart}
             />
         </div>
     );

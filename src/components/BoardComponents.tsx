@@ -46,15 +46,20 @@ const BoardComponents: FC<BoardProps> = ({board, setBoard, swapPlayer, currentPl
     return (
         <div className='board-wrap'>
             <div className='textBoxCurrentPlayer'>
-                <h2>Ходит:
-                    <span
-                        style={{
-                            color: currentPlayer?.color === Colors.WHITE ? 'white' : 'black',
-                            marginLeft: 5
-                    }}>
+                {currentPlayer === null
+                    ?
+                    <h2>Начните игру</h2>
+                    :
+                    <h2>Ходит:
+                        <span
+                            style={{
+                                color: currentPlayer?.color === Colors.WHITE ? 'white' : 'black',
+                                marginLeft: 5
+                            }}>
                         {currentPlayer?.color === Colors.WHITE ? 'Белый' : 'Черный'}
                     </span>
-                </h2>
+                    </h2>
+                }
             </div>
             <div className='board'>
                 {board.cells.map((row, index) =>
